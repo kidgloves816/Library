@@ -1,0 +1,7 @@
+.book {
+    display: grid;
+    height: auto;
+    width: fit-content;
+    background-color: lightyellow;
+    padding: 20px;
+}
