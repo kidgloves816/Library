@@ -9,13 +9,60 @@
     
 </head>
 <body>
-    <script src="library.js"></script>
-
-    <div class="book">
-        <p class="title">Title</p>
-        <p class="author">Author</p>
-        <p class="pages">Pages</p>
-        <p class="read">Read</p>
+    
+    <div class="container">
+            
+        </div>
     </div>
+    <script>
+        let myLibrary = [];
+        const container = document.querySelector('.container')
+
+        function Book(title, author, pages, read) {
+            this.title = title
+            this.author = author
+            this.pages = pages
+            this.read = read
+        }
+        
+        function addBookToLibrary(title, author, pages, read) {
+            let book = new Book(title, author, pages, read);
+            myLibrary.push(book);
+            return book;
+        }
+        
+        function createBookCard(title, author, pages, read) {
+            const currentTitle = document.createTextNode(`${title}`);
+            const currentAuthor = document.createTextNode(`${author}`);
+            const currentPages = document.createTextNode(`${pages}`);
+            const readStatus = document.createTextNode(`${read}`);
+            
+            card = document.createElement('div');
+            card.setAttribute('id','card')
+
+            const titleDiv = document.createElement('p');
+            titleDiv.setAttribute('id','title');
+
+            const authorDiv = document.createElement('p');
+            authorDiv.setAttribute('id','author');
+
+            const pagesDiv = document.createElement('p');
+            pagesDiv.setAttribute('id','pages')
+
+            const readDiv = document.createElement('p');
+            readDiv.setAttribute('id','read');
+
+
+            titleDiv.appendChild(currentTitle);
+            authorDiv.appendChild(currentAuthor);
+            pagesDiv.appendChild(currentPages);
+            readDiv.appendChild(readStatus);
+            card.appendChild(titleDiv);
+            card.appendChild(authorDiv);
+            card.appendChild(pagesDiv);
+            card.appendChild(readDiv);
+            container.appendChild(card);
+        }
+    </script>
 </body>
 </html>

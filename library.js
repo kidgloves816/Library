@@ -13,8 +13,9 @@ function addBookToLibrary(title, author, pages, read) {
     return book;
 }
 
-const div = document.createElement('div');
-function createBookCard() {
-    addBookToLibrary();
-   div.appendChild(book.title);
+const container = document.getElementsByClassName('container')
+function createBookCard(title, author, pages, read) {
+    const bookDisplay = document.createTextNode('book')
+    const book = addBookToLibrary();
+    container.appendChild(bookDisplay);
 }
