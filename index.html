@@ -30,13 +30,23 @@
             myLibrary.push(book);
             return book;
         }
+
+        function loopThroughArray() {
+            myLibrary.forEach(book => {
+                const currentTitle = document.createTextNode(`${book.title}`);
+                const currentAuthor = document.createTextNode(`${book.author}`);
+                const currentPages = document.createTextNode(`${book.pages}`);
+                const readStatus = document.createTextNode(`${book.read}`);
+            }
+            )
+        }
         
         function createBookCard(title, author, pages, read) {
             const currentTitle = document.createTextNode(`${title}`);
             const currentAuthor = document.createTextNode(`${author}`);
             const currentPages = document.createTextNode(`${pages}`);
             const readStatus = document.createTextNode(`${read}`);
-            
+
             card = document.createElement('div');
             card.setAttribute('id','card')
 
